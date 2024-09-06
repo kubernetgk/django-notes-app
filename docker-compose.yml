@@ -1,6 +1,11 @@
-version : "3.3"
+version : "3.8"
+networks:
+  monitoring:
+    driver: bridge
 services :
-  web :
-     image : trainwithshubham/notes-app-jenkins:latest
-     ports :
-         - "8000:8000"
+  notes-app:
+    build:
+       context: .
+    ports :
+       - "8000:8000"
+    container_name: django-app
